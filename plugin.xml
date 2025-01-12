@@ -75,4 +75,24 @@
     </js-module>
   </platform>  
 
+  <platform name="windows">
+    <config-file target="config.xml" parent="/*">
+      <feature name="Insomnia">
+        <param name="windows-package" value="Insomnia"/>
+      </feature>
+    </config-file>
+
+    <source-file src="src/windows/Insomnia.cs" />
+  </platform>
+
+  <platform name="firefoxos">
+    <config-file target="config.xml" parent="/*">
+      <feature name="Insomnia">
+        <param name="firefoxos-package" value="Insomnia"/>
+      </feature>
+    </config-file>
+
+    <source-file src="src/firefoxos/Insomnia.js" />
+  </platform>
+
 </plugin>
