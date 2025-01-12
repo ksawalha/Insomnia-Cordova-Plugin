@@ -14,6 +14,9 @@
   }
   CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
   [self.commandDelegate sendPluginResult:result callbackId:callbackId];
+  
+  // Hook-related configuration
+  [self executeHook:@"before_keepAwake"];
 }
 
 - (void) allowSleepAgain:(CDVInvokedUrlCommand*)command {
@@ -27,6 +30,14 @@
   }
   CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK];
   [self.commandDelegate sendPluginResult:result callbackId:callbackId];
+  
+  // Hook-related configuration
+  [self executeHook:@"before_allowSleepAgain"];
+}
+
+// Hook-related method
+- (void) executeHook:(NSString*)hookName {
+  // Implement hook execution logic here
 }
 
 @end
